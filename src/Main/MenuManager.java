@@ -6,15 +6,16 @@
 package Main;
 
 import Core.Employee;
+import erm.ERM;
 import java.util.Scanner;
 
 /**
  *
  * @author rajbir
  */
-public class MenuManager extends Employee {
+public class MenuManager extends ERM {
 
-    public static void Menus(int n) {
+    public static void Menus(int n, Employee[] e) {
         Scanner input = new Scanner(System.in);
         boolean exit = false;
         do {
@@ -34,11 +35,11 @@ public class MenuManager extends Employee {
                 switch (input.nextInt()) {
                     case 1:
                         line();
-                        EmployeeData.add(n);
+                        EmployeeData.add(n,e);
                         break;
                     case 2:
                         line();
-                      Employee.returnList();
+                        listAll(e);
                         break;
                     case 3:
                         break;
@@ -72,8 +73,14 @@ public class MenuManager extends Employee {
         System.out.println("");
         return null;
     }
-
-    public MenuManager(double eID, String eFirstName, String eLastName, double eDOB, String eGender, double ePhone, String eAddress, String eEmail, String eDepartment, String eDesignation, String ePayType, double ePay, String eAttendance, String ePerformace) {
-        super(eID, eFirstName, eLastName, eDOB, eGender, ePhone, eAddress, eEmail, eDepartment, eDesignation, ePayType, ePay, eAttendance, ePerformace);
+    
+      public static void listAll(Employee[] a) {
+        for (int i = 0; i < a.length; i++) {
+            Employee e = a[i];
+            System.out.println("    " + e.geteID() + "    " + e.geteFirstName() + "    " + e.geteLastName() + "   " + e.geteDOB()
+                    + "    " + e.geteGender() + "    " + e.getePhone() + "   " + e.geteAddress() + "    " + e.geteEmail()
+                    + "    " + e.geteDepartment() + "    " + e.geteDesignation() + "    " + e.getePayType()
+                    + "    " + e.getePay() + "   " + e.geteAttendance() + "   " + e.getePerformace());
+        }
     }
 }

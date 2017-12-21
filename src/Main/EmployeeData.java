@@ -14,9 +14,8 @@ import java.util.Scanner;
  */
 public class EmployeeData extends Employee {
 
-    public static void add(int input) {
+    public static void add(int input, Employee[] e) {
         Scanner s = new Scanner(System.in);
-        Employee[] emp = new Employee[input + 1];
         for (int i = 0; i < input; i++) {
             double iid = input;
             System.out.print("Enter the First name:- ");
@@ -45,24 +44,17 @@ public class EmployeeData extends Employee {
             String at = s.next();
             System.out.print("Enter the Performance data, if not available leave it as 'N/A':- ");
             String pd = s.next();
-            emp[i] = new Employee(iid, fn, ln, dob, g, p, ma, em, dep, dsg, pt, py, at, pd);
+            e[i] = new Employee(iid, fn, ln, dob, g, p, ma, em, dep, dsg, pt, py, at, pd);
             MenuManager.line();
         }
     }
 
     public EmployeeData(double eID, String eFirstName, String eLastName, double eDOB, String eGender, double ePhone, String eAddress, String eEmail, String eDepartment, String eDesignation, String ePayType, double ePay, String eAttendance, String ePerformace) {
         super(eID, eFirstName, eLastName, eDOB, eGender, ePhone, eAddress, eEmail, eDepartment, eDesignation, ePayType, ePay, eAttendance, ePerformace);
-        double id = eID;
     }
 
-//    public static void listAll(Employee[] a) {
-//        for (int i = 0; i < a.length; i++) {
-//            Employee super = a[i];
-//            System.out.println("    " + super.geteID() + "    " + super.geteFirstName() + "    " + super.geteLastName() + "   " + super.geteDOB()
-//                    + "    " + super.geteGender() + "    " + super.getePhone() + "   " + super.geteAddress() + "    " + super.geteEmail()
-//                    + "    " + super.geteDepartment() + "    " + super.geteDesignation() + "    " + super.getePayType()
-//                    + "    " + super.getePay() + "   " + super.geteAttendance() + "   " + super.getePerformace());
-//        }
+  
+
     public void returnData() {
         System.out.println("    " + super.geteID() + "    " + super.geteFirstName() + "    " + super.geteLastName() + "   " + super.geteDOB()
                 + "    " + super.geteGender() + "    " + super.getePhone() + "   " + super.geteAddress() + "    " + super.geteEmail()

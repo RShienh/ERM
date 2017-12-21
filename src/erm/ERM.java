@@ -5,6 +5,7 @@
  */
 package erm;
 
+import Core.Employee;
 import Main.MenuManager;
 import java.util.Scanner;
 
@@ -24,7 +25,9 @@ public class ERM {
         Scanner input = new Scanner(System.in);
         System.out.print("Enter the number of entries in the database: ");
        int entries = input.nextInt();
-        MenuManager.Menus(entries);
+        Employee[] e = new Employee[entries];
+        MenuManager.Menus(entries,e);
+       
     }
 
 }
