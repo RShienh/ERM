@@ -17,7 +17,7 @@ public class EmployeeData extends Employee {
     public static void add(int input, Employee[] e) {
         Scanner s = new Scanner(System.in);
         for (int i = 0; i < input; i++) {
-            double iid = input;
+            double iid = i+1;
             System.out.print("Enter the First name:- ");
             String fn = s.next();
             System.out.print("Enter the Last name:- ");
