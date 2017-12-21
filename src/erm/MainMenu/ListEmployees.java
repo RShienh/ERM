@@ -14,9 +14,7 @@ public class ListEmployees extends AddEmployee {
     public static void list(int in) {
         System.out.println("***Here is the list of all employees***");
         MenuManager.line();
-        
-        for (int i = 0; i < in; i++) {
-            
+        for (int i = 0; i < in; i++) {            
         }
     }
 }

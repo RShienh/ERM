@@ -47,7 +47,7 @@ public class AddEmployee extends ERM {
             System.out.print("Enter the Performance data, if not available leave it as 'N/A':- ");
             String pd = s.next();
             emp[i]= new Employee(iid, fn, ln, dob,g,p,ma,em,dep,dsg,pt,py,at,pd);
-            System.out.println("");
+            MenuManager.line();
         }
     }
 }

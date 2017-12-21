@@ -5,24 +5,20 @@
  */
 package erm.MainMenu;
 
+import erm.ERM;
 import java.util.Scanner;
 
 /**
  *
  * @author rajbir
  */
-public class MenuManager {
+public class MenuManager extends ERM{
 
-    public static void Menus() {
-        Scanner input = new Scanner(System.in);
-        System.out.println("+++Welcome to ERM system+++");
-        line();
+    public static void Menus(int n) {
+        Scanner input = new Scanner(System.in);   
         boolean exit = false;
-        int entries = 0;
-        System.out.print("Enter the number of entries in the database: ");
-        entries = input.nextInt();
         do {
-            if (entries != 0) {
+            if (n != 0) {
                 line();
                 System.out.println("**Select from list of menus**\n");
                 System.out.println("1. Add an Employee's Data");
@@ -38,11 +34,11 @@ public class MenuManager {
                 switch (input.nextInt()) {
                     case 1:
                         line();
-                        AddEmployee.add(entries);
+                        AddEmployee.add(n);
                         break;
                     case 2:
                        line();
-                        ListEmployees.list(entries);
+                        ListEmployees.list(n);
                         break;
                     case 3:
                         break;
@@ -70,7 +66,7 @@ public class MenuManager {
     }
 
     public static String line() {
-        for (int i = 0; i < 203; i++) {
+        for (int i = 0; i < 202; i++) {
             System.out.print("'");
 
         }

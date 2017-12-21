@@ -6,6 +6,7 @@
 package erm;
 
 import erm.MainMenu.MenuManager;
+import java.util.Scanner;
 
 /**
  *
@@ -18,7 +19,12 @@ public class ERM {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        MenuManager.Menus();
+        System.out.println("+++Welcome to ERM system+++");
+        MenuManager.line();
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter the number of entries in the database: ");
+       int entries = input.nextInt();
+        MenuManager.Menus(entries);
     }
-    
+
 }

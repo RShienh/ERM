@@ -93,9 +93,8 @@ public class Employee extends ERM {
     }
 
     public void returnList() {
-//        System.out.println("    " + eID + "    " + eFirstName + "   " + eLastName + "   "
-//                + eDOB + "   " + eGender + "   " + ePhone + "   " + eAddress + "    "
-//                + eEmail + "  " + eDepartment + "   " + eDesignation + "   " + ePayType + "   " + ePay);
-System.out.println();
+        System.out.println("    " + eID + "    " + eFirstName + "   " + eLastName + "   "
+                + eDOB + "   " + eGender + "   " + ePhone + "   " + eAddress + "    "
+                + eEmail + "  " + eDepartment + "   " + eDesignation + "   " + ePayType + "   " + ePay+"    "+eAttendance+"   "+ ePerformace);
     }
 }
