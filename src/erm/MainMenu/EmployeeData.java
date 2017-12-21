@@ -59,7 +59,6 @@ public class EmployeeData extends ERM {
                     + "    " + e.geteGender() + "    " + e.getePhone() + "   " + e.geteAddress() + "    " + e.geteEmail()
                     + "    " + e.geteDepartment() + "    " + e.geteDesignation() + "    " + e.getePayType()
                     + "    " + e.getePay() + "   " + e.geteAttendance() + "   " + e.getePerformace());
-
         }
     }
 }
