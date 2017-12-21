@@ -12,10 +12,10 @@ import java.util.Scanner;
  *
  * @author rajbir
  */
-public class MenuManager extends ERM{
+public class MenuManager extends ERM {
 
     public static void Menus(int n) {
-        Scanner input = new Scanner(System.in);   
+        Scanner input = new Scanner(System.in);
         boolean exit = false;
         do {
             if (n != 0) {
@@ -34,11 +34,11 @@ public class MenuManager extends ERM{
                 switch (input.nextInt()) {
                     case 1:
                         line();
-                        AddEmployee.add(n);
+                        EmployeeData.add(n);
                         break;
                     case 2:
-                       line();
-                        ListEmployees.list(n);
+                        line();
+                        EmployeeData.listAll(a);
                         break;
                     case 3:
                         break;
@@ -68,7 +68,6 @@ public class MenuManager extends ERM{
     public static String line() {
         for (int i = 0; i < 202; i++) {
             System.out.print("'");
-
         }
         System.out.println("");
         return null;

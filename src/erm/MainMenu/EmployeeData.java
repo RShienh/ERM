@@ -13,7 +13,7 @@ import java.util.Scanner;
  *
  * @author rajbir
  */
-public class AddEmployee extends ERM {
+public class EmployeeData extends ERM {
 
     public static void add(int input) {
         Scanner s = new Scanner(System.in);
@@ -46,8 +46,20 @@ public class AddEmployee extends ERM {
             String at = s.next();
             System.out.print("Enter the Performance data, if not available leave it as 'N/A':- ");
             String pd = s.next();
-            emp[i]= new Employee(iid, fn, ln, dob,g,p,ma,em,dep,dsg,pt,py,at,pd);
+            emp[i] = new Employee(iid, fn, ln, dob, g, p, ma, em, dep, dsg, pt, py, at, pd);
             MenuManager.line();
+        }
+        listAll(emp);
+    }
+
+    public static void listAll(Employee[] a) {
+        for (int i = 0; i < a.length; i++) {
+            Employee e = a[i];
+            System.out.println("    " + e.geteID() + "    " + e.geteFirstName() + "    " + e.geteLastName() + "   " + e.geteDOB()
+                    + "    " + e.geteGender() + "    " + e.getePhone() + "   " + e.geteAddress() + "    " + e.geteEmail()
+                    + "    " + e.geteDepartment() + "    " + e.geteDesignation() + "    " + e.getePayType()
+                    + "    " + e.getePay() + "   " + e.geteAttendance() + "   " + e.getePerformace());
+
         }
     }
 }
