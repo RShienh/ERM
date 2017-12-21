@@ -19,7 +19,7 @@ public class EmployeeData extends ERM {
         Scanner s = new Scanner(System.in);
         Employee[] emp = new Employee[input + 1];
         for (int i = 0; i < input; i++) {
-            double iid = input + 1;
+            double iid = input;
             System.out.print("Enter the First name:- ");
             String fn = s.next();
             System.out.print("Enter the Last name:- ");

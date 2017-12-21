@@ -38,7 +38,7 @@ public class MenuManager extends ERM {
                         break;
                     case 2:
                         line();
-                        EmployeeData.listAll(a);
+                        EmployeeData.listAll();
                         break;
                     case 3:
                         break;
