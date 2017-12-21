@@ -53,13 +53,4 @@ public class EmployeeData extends Employee {
         super(eID, eFirstName, eLastName, eDOB, eGender, ePhone, eAddress, eEmail, eDepartment, eDesignation, ePayType, ePay, eAttendance, ePerformace);
     }
 
-  
-
-    public void returnData() {
-        System.out.println("    " + super.geteID() + "    " + super.geteFirstName() + "    " + super.geteLastName() + "   " + super.geteDOB()
-                + "    " + super.geteGender() + "    " + super.getePhone() + "   " + super.geteAddress() + "    " + super.geteEmail()
-                + "    " + super.geteDepartment() + "    " + super.geteDesignation() + "    " + super.getePayType()
-                + "    " + super.getePay() + "   " + super.geteAttendance() + "   " + super.getePerformace());
-
-    }
 }

@@ -42,6 +42,8 @@ public class MenuManager extends ERM {
                         listAll(e);
                         break;
                     case 3:
+                        line();
+                        RemoveEmployee.remove(e);
                         break;
                     case 4:
                         break;
