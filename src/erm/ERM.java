@@ -5,7 +5,7 @@
  */
 package erm;
 
-import erm.MainMenu.MenuManager;
+import Main.MenuManager;
 import java.util.Scanner;
 
 /**

@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package erm.MainMenu;
+package Main;
 
 /**
  *
  * @author rajbi
  */
-public class PerformanceData {
+public class SalaryData {
     
 }

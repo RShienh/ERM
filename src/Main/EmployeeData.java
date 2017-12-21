@@ -3,17 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package erm.MainMenu;
+package Main;
 
 import Core.Employee;
-import erm.ERM;
 import java.util.Scanner;
 
 /**
  *
  * @author rajbir
  */
-public class EmployeeData extends ERM {
+public class EmployeeData extends Employee {
 
     public static void add(int input) {
         Scanner s = new Scanner(System.in);
@@ -49,16 +48,26 @@ public class EmployeeData extends ERM {
             emp[i] = new Employee(iid, fn, ln, dob, g, p, ma, em, dep, dsg, pt, py, at, pd);
             MenuManager.line();
         }
-        listAll(emp);
     }
 
-    public static void listAll(Employee[] a) {
-        for (int i = 0; i < a.length; i++) {
-            Employee e = a[i];
-            System.out.println("    " + e.geteID() + "    " + e.geteFirstName() + "    " + e.geteLastName() + "   " + e.geteDOB()
-                    + "    " + e.geteGender() + "    " + e.getePhone() + "   " + e.geteAddress() + "    " + e.geteEmail()
-                    + "    " + e.geteDepartment() + "    " + e.geteDesignation() + "    " + e.getePayType()
-                    + "    " + e.getePay() + "   " + e.geteAttendance() + "   " + e.getePerformace());
-        }
+    public EmployeeData(double eID, String eFirstName, String eLastName, double eDOB, String eGender, double ePhone, String eAddress, String eEmail, String eDepartment, String eDesignation, String ePayType, double ePay, String eAttendance, String ePerformace) {
+        super(eID, eFirstName, eLastName, eDOB, eGender, ePhone, eAddress, eEmail, eDepartment, eDesignation, ePayType, ePay, eAttendance, ePerformace);
+        double id = eID;
+    }
+
+//    public static void listAll(Employee[] a) {
+//        for (int i = 0; i < a.length; i++) {
+//            Employee super = a[i];
+//            System.out.println("    " + super.geteID() + "    " + super.geteFirstName() + "    " + super.geteLastName() + "   " + super.geteDOB()
+//                    + "    " + super.geteGender() + "    " + super.getePhone() + "   " + super.geteAddress() + "    " + super.geteEmail()
+//                    + "    " + super.geteDepartment() + "    " + super.geteDesignation() + "    " + super.getePayType()
+//                    + "    " + super.getePay() + "   " + super.geteAttendance() + "   " + super.getePerformace());
+//        }
+    public void returnData() {
+        System.out.println("    " + super.geteID() + "    " + super.geteFirstName() + "    " + super.geteLastName() + "   " + super.geteDOB()
+                + "    " + super.geteGender() + "    " + super.getePhone() + "   " + super.geteAddress() + "    " + super.geteEmail()
+                + "    " + super.geteDepartment() + "    " + super.geteDesignation() + "    " + super.getePayType()
+                + "    " + super.getePay() + "   " + super.geteAttendance() + "   " + super.getePerformace());
+
     }
 }

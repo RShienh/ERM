@@ -3,16 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package erm.MainMenu;
+package Main;
 
-import erm.ERM;
+import Core.Employee;
 import java.util.Scanner;
 
 /**
  *
  * @author rajbir
  */
-public class MenuManager extends ERM {
+public class MenuManager extends Employee {
 
     public static void Menus(int n) {
         Scanner input = new Scanner(System.in);
@@ -38,7 +38,7 @@ public class MenuManager extends ERM {
                         break;
                     case 2:
                         line();
-                        EmployeeData.listAll();
+                      Employee.returnList();
                         break;
                     case 3:
                         break;
@@ -71,5 +71,9 @@ public class MenuManager extends ERM {
         }
         System.out.println("");
         return null;
+    }
+
+    public MenuManager(double eID, String eFirstName, String eLastName, double eDOB, String eGender, double ePhone, String eAddress, String eEmail, String eDepartment, String eDesignation, String ePayType, double ePay, String eAttendance, String ePerformace) {
+        super(eID, eFirstName, eLastName, eDOB, eGender, ePhone, eAddress, eEmail, eDepartment, eDesignation, ePayType, ePay, eAttendance, ePerformace);
     }
 }
