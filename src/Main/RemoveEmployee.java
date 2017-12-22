@@ -24,8 +24,12 @@ public class RemoveEmployee extends Employee {
         MenuManager.listAll(e);
         System.out.print("Enter the ID number of the employee you want to remove: ");
         int rID = data.nextInt();
-        for (int i = rID; i < e.length - 1; i++) {
-            e[i] = e[i + 1];
+        MenuManager.line();
+//        for (int i = rID; i < e.length - 1; i++) {
+//            e[i] = e[i + 1];
+//        }
+        System.out.println("Searching...");
+        for (int i = 0; i < e.length; i++) {          
         }
         System.out.println("***The new list***");
         MenuManager.listAll(e);

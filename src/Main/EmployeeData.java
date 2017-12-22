@@ -46,6 +46,7 @@ public class EmployeeData extends Employee {
             String pd = s.next();
             e[i] = new Employee(iid, fn, ln, dob, g, p, ma, em, dep, dsg, pt, py, at, pd);
             MenuManager.line();
+            MenuManager.listAll(e);
         }
     }
 

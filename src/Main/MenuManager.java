@@ -84,5 +84,6 @@ public class MenuManager extends ERM {
                     + "    " + e.geteDepartment() + "    " + e.geteDesignation() + "    " + e.getePayType()
                     + "    " + e.getePay() + "   " + e.geteAttendance() + "   " + e.getePerformace());
         }
+        MenuManager.line();
     }
 }
