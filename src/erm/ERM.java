@@ -24,10 +24,10 @@ public class ERM {
         MenuManager.line();
         Scanner input = new Scanner(System.in);
         System.out.print("Enter the number of entries in the database: ");
-       int entries = input.nextInt();
+        int entries = input.nextInt();
         Employee[] e = new Employee[entries];
-        MenuManager.Menus(entries,e);
-       
+        MenuManager.Menus(entries, e);
+
     }
 
 }

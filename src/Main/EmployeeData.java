@@ -13,11 +13,11 @@ import java.util.Scanner;
  * @author rajbir
  */
 public class EmployeeData extends Employee {
-
+    
     public static void add(int input, Employee[] e) {
         Scanner s = new Scanner(System.in);
         for (int i = 0; i < input; i++) {
-            double iid = i+1;
+            double iid = i + 1;
             System.out.print("Enter the First name:- ");
             String fn = s.next();
             System.out.print("Enter the Last name:- ");
@@ -49,9 +49,9 @@ public class EmployeeData extends Employee {
             MenuManager.listAll(e);
         }
     }
-
+    
     public EmployeeData(double eID, String eFirstName, String eLastName, double eDOB, String eGender, double ePhone, String eAddress, String eEmail, String eDepartment, String eDesignation, String ePayType, double ePay, String eAttendance, String ePerformace) {
         super(eID, eFirstName, eLastName, eDOB, eGender, ePhone, eAddress, eEmail, eDepartment, eDesignation, ePayType, ePay, eAttendance, ePerformace);
     }
-
+    
 }

@@ -29,7 +29,7 @@ public class RemoveEmployee extends Employee {
 //            e[i] = e[i + 1];
 //        }
         System.out.println("Searching...");
-        for (int i = 0; i < e.length; i++) {          
+        for (int i = 0; i < e.length; i++) {
         }
         System.out.println("***The new list***");
         MenuManager.listAll(e);

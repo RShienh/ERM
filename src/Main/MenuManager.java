@@ -35,7 +35,7 @@ public class MenuManager extends ERM {
                 switch (input.nextInt()) {
                     case 1:
                         line();
-                        EmployeeData.add(n,e);
+                        EmployeeData.add(n, e);
                         break;
                     case 2:
                         line();
@@ -75,8 +75,8 @@ public class MenuManager extends ERM {
         System.out.println("");
         return null;
     }
-    
-      public static void listAll(Employee[] a) {
+
+    public static void listAll(Employee[] a) {
         for (int i = 0; i < a.length; i++) {
             Employee e = a[i];
             System.out.println("    " + e.geteID() + "    " + e.geteFirstName() + "    " + e.geteLastName() + "   " + e.geteDOB()
