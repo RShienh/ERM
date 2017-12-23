@@ -38,11 +38,11 @@ public class MenuManager extends ERM {
                         EmployeeDatabase.add(n, e);
                         break;
                     case 2:
-                        EmployeeDatabase.listAll(n,e);
+                        EmployeeDatabase.listAll(n, e);
                         break;
                     case 3:
                         line();
-                        EmployeeDatabase.remove(n,e);
+                        EmployeeDatabase.remove(n, e);
                         break;
                     case 4:
                         break;
@@ -68,7 +68,7 @@ public class MenuManager extends ERM {
     }
 
     public static String line() {
-        for (int i = 0; i < 202; i++) {
+        for (int i = 0; i < 200; i++) {
             System.out.print("'");
         }
         System.out.println("");

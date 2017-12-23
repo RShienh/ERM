@@ -19,7 +19,7 @@ public class Employee extends ERM {
     private int eID;        //declaration of ID as int
 
     public Employee(int eID, String eFirstName, String eLastName, double eDOB, String eGender, double ePhone,
-            String eAddress, String eEmail, String eDepartment, String eDesignation,        //generating constructor with all variables
+            String eAddress, String eEmail, String eDepartment, String eDesignation, //generating constructor with all variables
             String ePayType, double ePay, String eAttendance, String ePerformace) {
         this.eID = eID;
         this.eFirstName = eFirstName;
@@ -151,10 +151,11 @@ public class Employee extends ERM {
         this.ePhone = ePhone;
     }
 
-    public void returnList() {
+    public void returnList() {                                                                                                                      //returns the list data
         System.out.println("    " + this.eID + "    " + this.eFirstName + "   " + this.eLastName + "   "
-                + eDOB + "   " + eGender + "   " + ePhone + "   " + eAddress + "    "
-                + eEmail + "  " + eDepartment + "   " + eDesignation + "   " + ePayType + "   " + ePay + "    " + eAttendance + "   " + ePerformace);
+                + this.eDOB + "   " + this.eGender + "   " + this.ePhone + "   " + this.eAddress + "    "
+                + this.eEmail + "  " + this.eDepartment + "   " + this.eDesignation + "   "
+                + this.ePayType + "   " + this.ePay + "    " + this.eAttendance + "   " + this.ePerformace);
     }
 
 }
