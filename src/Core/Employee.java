@@ -15,10 +15,11 @@ public class Employee extends ERM {
 
     private String eFirstName, eLastName, eGender, eAddress, eEmail, eDesignation, eDepartment, ePayType, eAttendance, ePerformace;     //declaration of string type variables
 
-    private double eID, eDOB, ePay, ePhone;             //declaration of double type variables
+    private double eDOB, ePay, ePhone;   //declaration of double type variables
+    private int eID;        //declaration of ID as int
 
-    public Employee(double eID, String eFirstName, String eLastName, double eDOB, String eGender, double ePhone,
-            String eAddress, String eEmail, String eDepartment, String eDesignation, //generating constructor with all variables
+    public Employee(int eID, String eFirstName, String eLastName, double eDOB, String eGender, double ePhone,
+            String eAddress, String eEmail, String eDepartment, String eDesignation,        //generating constructor with all variables
             String ePayType, double ePay, String eAttendance, String ePerformace) {
         this.eID = eID;
         this.eFirstName = eFirstName;
@@ -69,7 +70,7 @@ public class Employee extends ERM {
         return ePayType;
     }
 
-    public double geteID() {
+    public int geteID() {
         return eID;
     }
 
@@ -134,7 +135,7 @@ public class Employee extends ERM {
         this.ePerformace = ePerformace;
     }
 
-    public void seteID(double eID) {
+    public void seteID(int eID) {
         this.eID = eID;
     }
 

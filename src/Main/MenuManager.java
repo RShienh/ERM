@@ -35,15 +35,14 @@ public class MenuManager extends ERM {
                 switch (input.nextInt()) {
                     case 1:
                         line();
-                        EmployeeData.add(n, e);
+                        EmployeeDatabase.add(n, e);
                         break;
                     case 2:
-                        line();
-                        listAll(e);
+                        EmployeeDatabase.listAll(n,e);
                         break;
                     case 3:
                         line();
-                        RemoveEmployee.remove(e);
+                        EmployeeDatabase.remove(n,e);
                         break;
                     case 4:
                         break;
@@ -74,16 +73,5 @@ public class MenuManager extends ERM {
         }
         System.out.println("");
         return null;
-    }
-
-    public static void listAll(Employee[] a) {
-        for (int i = 0; i < a.length; i++) {
-            Employee e = a[i];
-            System.out.println("    " + e.geteID() + "    " + e.geteFirstName() + "    " + e.geteLastName() + "   " + e.geteDOB()
-                    + "    " + e.geteGender() + "    " + e.getePhone() + "   " + e.geteAddress() + "    " + e.geteEmail()
-                    + "    " + e.geteDepartment() + "    " + e.geteDesignation() + "    " + e.getePayType()
-                    + "    " + e.getePay() + "   " + e.geteAttendance() + "   " + e.getePerformace());
-        }
-        MenuManager.line();
     }
 }
