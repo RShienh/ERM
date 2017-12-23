@@ -82,11 +82,12 @@ public class EmployeeDatabase extends Employee {                                
         int rID = data.nextInt();
         MenuManager.line();
         System.out.println("Searching...");
-        for (int i = 0; i < e.length; i++) {
+        for (int i = 0; i < n; i++) {                                                                                //gets total length of the array
             Employee a = e[i];
             int nw = a.geteID();
             if (nw != rID) {
-            } else {
+                continue;
+            } else {                                                                                                    //set's value as 0
                 a.seteID(0);
             }
         }
@@ -94,9 +95,15 @@ public class EmployeeDatabase extends Employee {                                
         listAll(n, e);
     }
 
-    public static void listAll(int in, Employee[] a) {
+    public static void search(int n, Employee[] e) {
+    }
+
+    public static void update(int n, Employee[] e) {
+    }
+
+    public static void listAll(int in, Employee[] a) {                                                  //to list all
         if (a != null) {
-            for (int i = 0; i < in; i++) {
+            for (int i = 0; i < in; i++) {                                                                          //for loop to list all arrays 
                 Employee e = a[i];
                 System.out.println("    " + e.geteID() + "    " + e.geteFirstName() + "    " + e.geteLastName() + "   " + e.geteDOB()
                         + "    " + e.geteGender() + "    " + e.getePhone() + "   " + e.geteAddress() + "    " + e.geteEmail()

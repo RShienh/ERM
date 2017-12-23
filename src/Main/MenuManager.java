@@ -18,8 +18,8 @@ public class MenuManager extends ERM {
     public static void Menus(int n, Employee[] e) {
         Scanner input = new Scanner(System.in);
         boolean exit = false;
-        do {
-            if (n != 0) {
+        do {                                                    //runs the loop of menus
+            if (n != 0) {                                     //second validation to check if entries are not 0
                 line();
                 System.out.println("**Select from list of menus**\n");
                 System.out.println("1. Add an Employee's Data");
@@ -35,14 +35,14 @@ public class MenuManager extends ERM {
                 switch (input.nextInt()) {
                     case 1:
                         line();
-                        EmployeeDatabase.add(n, e);
+                        EmployeeDatabase.add(n, e);                                     //calls add method in employee database
                         break;
                     case 2:
-                        EmployeeDatabase.listAll(n, e);
+                        EmployeeDatabase.listAll(n, e);                                 //calls list all method in employee database
                         break;
                     case 3:
                         line();
-                        EmployeeDatabase.remove(n, e);
+                        EmployeeDatabase.remove(n, e);                            //calls remove method of the employeedatabase method
                         break;
                     case 4:
                         break;
@@ -57,7 +57,7 @@ public class MenuManager extends ERM {
                     case 9:
                         System.out.println("");
                         System.out.println(" You chose to exit !");
-                        exit = true;
+                        exit = true;                                                                //set's exit to true and ends loop
                         break;
                     default:
                         System.err.println("Invalid Choice, please select from the following menus");
@@ -68,8 +68,8 @@ public class MenuManager extends ERM {
     }
 
     public static String line() {
-        for (int i = 0; i < 200; i++) {
-            System.out.print("'");
+        for (int i = 0; i < 200; i++) {                                             //just a method to draw lines
+            System.out.print(":");
         }
         System.out.println("");
         return null;

@@ -5,10 +5,16 @@
  */
 package Main;
 
+import Core.Employee;
+
 /**
  *
  * @author rajbi
  */
-public class PerformanceData {
+public class PerformanceData extends Employee{
+
+    public PerformanceData(int eID, String eFirstName, String eLastName, double eDOB, String eGender, double ePhone, String eAddress, String eEmail, String eDepartment, String eDesignation, String ePayType, double ePay, String eAttendance, String ePerformace) {
+        super(eID, eFirstName, eLastName, eDOB, eGender, ePhone, eAddress, eEmail, eDepartment, eDesignation, ePayType, ePay, eAttendance, ePerformace);
+    }
 
 }
