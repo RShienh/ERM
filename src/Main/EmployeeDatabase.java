@@ -15,33 +15,32 @@ import java.util.Scanner;
 public class EmployeeDatabase extends Employee {                                                        //inherits methods of employee
 
     public static void add(int input, Employee[] e) {                                                           //add method to add data to array e
-        double dob, p, py;
+        long dob, p, py;
         Scanner s = new Scanner(System.in);
         for (int i = 0; i < input; i++) {                                                                                   //asks for data for number of entries added at the starting of program
-            int iid = i + 1;
             System.out.print("Enter the First name:- ");
             String fn = s.next();
             System.out.print("Enter the Last name:- ");
             String ln = s.next();
             do {
-                System.out.print("Enter the date of birth(ddmmyyyy):- ");                               //check to see if data added is double value or not
-                while (!s.hasNextDouble()) {
+                System.out.print("Enter the date of birth(ddmmyyyy):- ");                               //check to see if data added is long value or not
+                while (!s.hasNextLong()) {
                     System.err.print("Enter a number -> ");
                     System.out.print("Enter the date of birth(ddmmyyyy):- ");
                     s.next();
                 }
-                dob = s.nextDouble();
+                dob = s.nextLong();
             } while (dob <= 0);
             System.out.print("Enter the gender m/f/x:- ");
             String g = s.next();
             do {
-                System.out.print("Enter the Phone Number:- ");                                                  //check to see if data added is double value or not
-                while (!s.hasNextDouble()) {
+                System.out.print("Enter the Phone Number:- ");                                                  //check to see if data added is long value or not
+                while (!s.hasNextLong()) {
                     System.err.print("Enter a number ->");
                     System.out.print("Enter the Phone Number:- ");
                     s.next();
                 }
-                p = s.nextDouble();
+                p = s.nextLong();
             } while (p <= 0);
             System.out.print("Enter the mailing address:- ");
             String ma = s.next();
@@ -55,19 +54,19 @@ public class EmployeeDatabase extends Employee {                                
             String pt = s.next();
             do {
                 System.out.print("Enter the Pay:- ");
-                while (!s.hasNextDouble()) {                                                                                    //check to see if data added is double value or not
+                while (!s.hasNextLong()) {                                                                                    //check to see if data added is long value or not
                     System.err.print("Enter a number ->");
                     System.out.print("Enter the Pay:- ");
                     s.next();
                 }
-                py = s.nextDouble();
+                py = s.nextLong();
             } while (py <= 0);
             System.out.print("Enter the attendance, if not available leave it as 'N/A':- ");
             String at = s.next();
             System.out.print("Enter the Performance data, if not available leave it as 'N/A':- ");
             String pd = s.next();
 
-            e[i] = new Employee(iid, fn, ln, dob, g, p, ma, em, dep, dsg, pt, py, at, pd);                              //adds all that data to constructor of employeee
+            e[i] = new Employee(i, fn, ln, dob, g, p, ma, em, dep, dsg, pt, py, at, pd);                              //adds all that data to constructor of employeee
 
             MenuManager.line();
         }
@@ -78,17 +77,17 @@ public class EmployeeDatabase extends Employee {                                
         Scanner data = new Scanner(System.in);
         System.out.println("***The list***");
         listAll(n, e);
-        System.out.print("Enter the ID number of the employee you want to remove: ");
-        int rID = data.nextInt();
+        System.out.print("Enter the Phone number of the employee you want to remove: ");
+        long rPhone = data.nextLong();
         MenuManager.line();
         System.out.println("Searching...");
         for (int i = 0; i < n; i++) {                                                                                //gets total length of the array
             Employee a = e[i];
-            int nw = a.geteID();
-            if (nw != rID) {
-                continue;
+            long nw = a.getePhone();
+            if (nw != rPhone) {
+                //System.err.println("Phone number not found!");
             } else {                                                                                                    //set's value as 0
-                a.seteID(0);
+                a.setePhone(0);
             }
         }
         System.out.println("***The new list***");
@@ -105,10 +104,12 @@ public class EmployeeDatabase extends Employee {                                
         if (a != null) {
             for (int i = 0; i < in; i++) {                                                                          //for loop to list all arrays 
                 Employee e = a[i];
-                System.out.println("    " + e.geteID() + "    " + e.geteFirstName() + "    " + e.geteLastName() + "   " + e.geteDOB()
-                        + "    " + e.geteGender() + "    " + e.getePhone() + "   " + e.geteAddress() + "    " + e.geteEmail()
-                        + "    " + e.geteDepartment() + "    " + e.geteDesignation() + "    " + e.getePayType()
-                        + "    " + e.getePay() + "   " + e.geteAttendance() + "   " + e.getePerformace());
+                if (e.getePhone()!= 0) {
+                    System.out.println("    " + e.geteFirstName() + "    " + e.geteLastName() + "   " + e.geteDOB()
+                            + "    " + e.geteGender() + "    " + e.getePhone() + "   " + e.geteAddress() + "    " + e.geteEmail()
+                            + "    " + e.geteDepartment() + "    " + e.geteDesignation() + "    " + e.getePayType()
+                            + "    " + e.getePay() + "   " + e.geteAttendance() + "   " + e.getePerformace());
+                }
             }
             MenuManager.line();
         } else {
@@ -116,7 +117,7 @@ public class EmployeeDatabase extends Employee {                                
         }
     }
 
-    public EmployeeDatabase(int eID, String eFirstName, String eLastName, double eDOB, String eGender, double ePhone, String eAddress, String eEmail, String eDepartment, String eDesignation, String ePayType, double ePay, String eAttendance, String ePerformace) {
+    public EmployeeDatabase(int eID, String eFirstName, String eLastName, long eDOB, String eGender, long ePhone, String eAddress, String eEmail, String eDepartment, String eDesignation, String ePayType, long ePay, String eAttendance, String ePerformace) {
         super(eID, eFirstName, eLastName, eDOB, eGender, ePhone, eAddress, eEmail, eDepartment, eDesignation, ePayType, ePay, eAttendance, ePerformace);
     }
 

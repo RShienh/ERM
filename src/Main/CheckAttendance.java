@@ -13,7 +13,7 @@ import Core.Employee;
  */
 public class CheckAttendance extends Employee {
 
-    public CheckAttendance(int eID, String eFirstName, String eLastName, double eDOB, String eGender, double ePhone, String eAddress, String eEmail, String eDepartment, String eDesignation, String ePayType, double ePay, String eAttendance, String ePerformace) {
+    public CheckAttendance(int eID, String eFirstName, String eLastName, long eDOB, String eGender, long ePhone, String eAddress, String eEmail, String eDepartment, String eDesignation, String ePayType, long ePay, String eAttendance, String ePerformace) {
         super(eID, eFirstName, eLastName, eDOB, eGender, ePhone, eAddress, eEmail, eDepartment, eDesignation, ePayType, ePay, eAttendance, ePerformace);
     }
 

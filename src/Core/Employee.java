@@ -14,13 +14,13 @@ import erm.ERM;
 public class Employee extends ERM {
 
     private String eFirstName, eLastName, eGender, eAddress, eEmail, eDesignation, eDepartment, ePayType, eAttendance, ePerformace;     //declaration of string type variables
-
-    private double eDOB, ePay, ePhone;   //declaration of double type variables
+    
+    private long eDOB, ePay, ePhone;   //declaration of long type variables
     private int eID;        //declaration of ID as int
 
-    public Employee(int eID, String eFirstName, String eLastName, double eDOB, String eGender, double ePhone,
+    public Employee(int eID, String eFirstName, String eLastName, long eDOB, String eGender, long ePhone,
             String eAddress, String eEmail, String eDepartment, String eDesignation, //generating constructor with all variables
-            String ePayType, double ePay, String eAttendance, String ePerformace) {
+            String ePayType, long ePay, String eAttendance, String ePerformace) {
         this.eID = eID;
         this.eFirstName = eFirstName;
         this.eLastName = eLastName;
@@ -74,15 +74,15 @@ public class Employee extends ERM {
         return eID;
     }
 
-    public double geteDOB() {
+    public long geteDOB() {
         return eDOB;
     }
 
-    public double getePhone() {
+    public long getePhone() {
         return ePhone;
     }
 
-    public double getePay() {
+    public long getePay() {
         return ePay;
     }
 
@@ -139,15 +139,15 @@ public class Employee extends ERM {
         this.eID = eID;
     }
 
-    public void seteDOB(double eDOB) {
+    public void seteDOB(long eDOB) {
         this.eDOB = eDOB;
     }
 
-    public void setePay(double ePay) {
+    public void setePay(long ePay) {
         this.ePay = ePay;
     }
 
-    public void setePhone(double ePhone) {
+    public void setePhone(long ePhone) {
         this.ePhone = ePhone;
     }
 
