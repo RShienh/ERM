@@ -6,6 +6,9 @@
 package Main;
 
 import Core.Employee;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Scanner;
 
 /**
@@ -16,6 +19,8 @@ public class EmployeeDatabase extends Employee {                                
 
     public static void add(int input, Employee[] e) {                                                           //add method to add data to array e
         long dob, p, py;
+        DateFormat df = new SimpleDateFormat("yyMMddHHmmss");
+        Date d = new Date();
         Scanner s = new Scanner(System.in);
         for (int i = 0; i < input; i++) {                                                                                   //asks for data for number of entries added at the starting of program
             System.out.print("Enter the First name:- ");
@@ -65,9 +70,9 @@ public class EmployeeDatabase extends Employee {                                
             String at = s.next();
             System.out.print("Enter the Performance data, if not available leave it as 'N/A':- ");
             String pd = s.next();
-
-            e[i] = new Employee(i, fn, ln, dob, g, p, ma, em, dep, dsg, pt, py, at, pd);                              //adds all that data to constructor of employeee
-
+            int ii = Integer.parseInt(df.format(d));
+            e[i] = new Employee(ii, fn, ln, dob, g, p, ma, em, dep, dsg, pt, py, at, pd);                              //adds all that data to constructor of employeee
+            System.out.print("The unique ID for employee is: " + ii);
             MenuManager.line();
         }
 
@@ -77,17 +82,17 @@ public class EmployeeDatabase extends Employee {                                
         Scanner data = new Scanner(System.in);
         System.out.println("***The list***");
         listAll(n, e);
-        System.out.print("Enter the Phone number of the employee you want to remove: ");
-        long rPhone = data.nextLong();
+        System.out.print("Enter the unique ID of the employee you want to remove: ");
+        int uID = data.nextInt();
         MenuManager.line();
         System.out.println("Searching...");
         for (int i = 0; i < n; i++) {                                                                                //gets total length of the array
             Employee a = e[i];
-            long nw = a.getePhone();
-            if (nw != rPhone) {
-                //System.err.println("Phone number not found!");
+            int nw = a.geteID();
+            if (nw != uID) {
+                System.err.println("Unique ID not found!");
             } else {                                                                                                    //set's value as 0
-                a.setePhone(0);
+                a.seteID(0);
             }
         }
         System.out.println("***The new list***");
@@ -104,7 +109,7 @@ public class EmployeeDatabase extends Employee {                                
         if (a != null) {
             for (int i = 0; i < in; i++) {                                                                          //for loop to list all arrays 
                 Employee e = a[i];
-                if (e.getePhone()!= 0) {
+                if (e.geteID()!= 0) {
                     System.out.println("    " + e.geteFirstName() + "    " + e.geteLastName() + "   " + e.geteDOB()
                             + "    " + e.geteGender() + "    " + e.getePhone() + "   " + e.geteAddress() + "    " + e.geteEmail()
                             + "    " + e.geteDepartment() + "    " + e.geteDesignation() + "    " + e.getePayType()
