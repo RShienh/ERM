@@ -19,7 +19,7 @@ public class EmployeeDatabase extends Employee {                                
 
     public static void add(int input, Employee[] e) {                                                           //add method to add data to array e
         long dob, p, py;
-        DateFormat df = new SimpleDateFormat("yyMMddHHmmss");
+        DateFormat df = new SimpleDateFormat("mmss");
         Date d = new Date();
         Scanner s = new Scanner(System.in);
         for (int i = 0; i < input; i++) {                                                                                   //asks for data for number of entries added at the starting of program
@@ -72,7 +72,7 @@ public class EmployeeDatabase extends Employee {                                
             String pd = s.next();
             int ii = Integer.parseInt(df.format(d));
             e[i] = new Employee(ii, fn, ln, dob, g, p, ma, em, dep, dsg, pt, py, at, pd);                              //adds all that data to constructor of employeee
-            System.out.print("The unique ID for employee is: " + ii);
+            System.out.println("The unique ID for employee is: " + ii);
             MenuManager.line();
         }
 
@@ -93,6 +93,7 @@ public class EmployeeDatabase extends Employee {                                
                 System.err.println("Unique ID not found!");
             } else {                                                                                                    //set's value as 0
                 a.seteID(0);
+                System.out.println("**Employee data removed**");
             }
         }
         System.out.println("***The new list***");
@@ -100,17 +101,36 @@ public class EmployeeDatabase extends Employee {                                
     }
 
     public static void search(int n, Employee[] e) {
+        Scanner d = new Scanner(System.in);
+        System.out.print("Enter the unique ID of the employee you want to search: ");
+        int uID = d.nextInt();
+        System.out.println("Searching...");
+        for (int i = 0; i < n; i++) {                                                                                //gets total length of the array
+            Employee a = e[i];
+            int nw = a.geteID();
+            if (nw != uID) {
+                System.err.println("Unique ID not found!");
+            } else {
+                    System.out.println("    " + a.geteID() + "    " + a.geteFirstName() + "    " + a.geteLastName() + "   " + a.geteDOB()
+                            + "    " + a.geteGender() + "    " + a.getePhone() + "   " + a.geteAddress() + "    " + a.geteEmail()
+                            + "    " + a.geteDepartment() + "    " + a.geteDesignation() + "    " + a.getePayType()
+                            + "    " + a.getePay() + "   " + a.geteAttendance() + "   " + a.getePerformace());
+            }
+        }
+        MenuManager.line();
+
     }
 
     public static void update(int n, Employee[] e) {
     }
 
     public static void listAll(int in, Employee[] a) {                                                  //to list all
+        MenuManager.line();
         if (a != null) {
             for (int i = 0; i < in; i++) {                                                                          //for loop to list all arrays 
                 Employee e = a[i];
-                if (e.geteID()!= 0) {
-                    System.out.println("    " + e.geteFirstName() + "    " + e.geteLastName() + "   " + e.geteDOB()
+                if (e.geteID() != 0) {
+                    System.out.println("    " + e.geteID() + "    " + e.geteFirstName() + "    " + e.geteLastName() + "   " + e.geteDOB()
                             + "    " + e.geteGender() + "    " + e.getePhone() + "   " + e.geteAddress() + "    " + e.geteEmail()
                             + "    " + e.geteDepartment() + "    " + e.geteDesignation() + "    " + e.getePayType()
                             + "    " + e.getePay() + "   " + e.geteAttendance() + "   " + e.getePerformace());

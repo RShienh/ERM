@@ -47,6 +47,7 @@ public class MenuManager extends ERM {
                     case 4:
                         break;
                     case 5:
+                        EmployeeDatabase.search(n, e);
                         break;
                     case 6:
                         break;
