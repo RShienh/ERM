@@ -19,12 +19,21 @@ public class EmployeeDatabase extends Employee {                                
 
     public static void add(int input, Employee[] e) {                                                           //add method to add data to array e
         long dob, p, py;
+        String fn;
         DateFormat df = new SimpleDateFormat("mmss");
         Date d = new Date();
         Scanner s = new Scanner(System.in);
         for (int i = 0; i < input; i++) {                                                                                   //asks for data for number of entries added at the starting of program
-            System.out.print("Enter the First name:- ");
-            String fn = s.next();
+            do {
+                System.out.print("Enter the First name:- ");
+                while (!s.hasNextLine()) {
+                    System.err.print("Invalid Entry");
+                    System.out.print("Enter the First name:- ");
+                    s.nextLine();
+                }
+                fn = s.nextLine();
+            } while (fn.isEmpty());
+
             System.out.print("Enter the Last name:- ");
             String ln = s.next();
             do {
@@ -111,14 +120,13 @@ public class EmployeeDatabase extends Employee {                                
             if (nw != uID) {
                 System.err.println("Unique ID not found!");
             } else {
-                    System.out.println("    " + a.geteID() + "    " + a.geteFirstName() + "    " + a.geteLastName() + "   " + a.geteDOB()
-                            + "    " + a.geteGender() + "    " + a.getePhone() + "   " + a.geteAddress() + "    " + a.geteEmail()
-                            + "    " + a.geteDepartment() + "    " + a.geteDesignation() + "    " + a.getePayType()
-                            + "    " + a.getePay() + "   " + a.geteAttendance() + "   " + a.getePerformace());
+                System.out.println("    " + a.geteID() + "    " + a.geteFirstName() + "    " + a.geteLastName() + "   " + a.geteDOB()
+                        + "    " + a.geteGender() + "    " + a.getePhone() + "   " + a.geteAddress() + "    " + a.geteEmail()
+                        + "    " + a.geteDepartment() + "    " + a.geteDesignation() + "    " + a.getePayType()
+                        + "    " + a.getePay() + "   " + a.geteAttendance() + "   " + a.getePerformace());
             }
         }
         MenuManager.line();
-
     }
 
     public static void update(int n, Employee[] e) {
