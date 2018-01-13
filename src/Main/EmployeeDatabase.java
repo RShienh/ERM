@@ -26,9 +26,8 @@ public class EmployeeDatabase extends Employee {                                
         for (int i = 0; i < input; i++) {                                                                                   //asks for data for number of entries added at the starting of program
             do {
                 System.out.print("Enter the First name:- ");
-                while (!s.hasNextLine()) {
-                    System.err.print("Invalid Entry");
-                    System.out.print("Enter the First name:- ");
+                while ((!s.hasNextLine())||s.hasNextInt()) {
+                    System.out.print("Enter text only:- ");
                     s.nextLine();
                 }
                 fn = s.nextLine();
